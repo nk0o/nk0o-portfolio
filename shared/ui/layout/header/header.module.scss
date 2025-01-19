@@ -1,0 +1,24 @@
+.header {
+  &-wrapper{
+    height: 80px;
+    background-color:bisque;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.nav-wrapper{
+  margin-left: auto;
+  ul{
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    a{
+      position: relative;
+      transition: all .9s;
+      &:hover{
+        top: -2px;
+      }
+    }
+  }
+}

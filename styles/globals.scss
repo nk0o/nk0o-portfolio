@@ -1,8 +1,18 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@use './reset.scss';
 
+$common-colors: (
+  black-0: #ffffff, 
+  black-1: #DBDBDB, 
+  black-2: #666666, 
+  black-3: #1F1F1F,
+  primary: #0F62FE,
+  secondary: #FF5151
+);
+:root {
+  @each $name, $color in $common-colors {
+    --color-#{$name}: #{$color};
+  }
+}
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -15,26 +25,22 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
 }
-
 body {
-  color: var(--foreground);
-  background: var(--background);
+  color: var(--color-black-2);
+  background: var(--color-black-0);
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
-
 a {
   color: inherit;
   text-decoration: none;
 }
-
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

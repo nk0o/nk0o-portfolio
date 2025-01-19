@@ -1,0 +1,44 @@
+import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import styles from "./header.module.scss";
+import cs from "classnames/bind";
+const cx = cs.bind(styles);
+import logoImg from"@/public/logo.png";
+
+
+export interface navProps {
+  title: string;
+  link: string;
+}
+
+export const Header = () => {
+  const nav: Array<navProps> = [
+    {title:'About Me', link:'/aboutme'},
+    {title:'Projects', link:'/projects'},
+    {title:'Contect Me', link:'/contect'},
+  ]
+
+  return (
+    <>
+      <header className={cx("header-wrapper")}>
+          <h1>
+            <Link rel="stylesheet" href="./">
+              <Image src={logoImg} alt="홈 화면으로 이동"  height={80} width={80} />
+            </Link>
+          </h1>
+          <nav className={cx("nav-wrapper")}>
+            <ul>
+              {nav.map((item) => (
+                <li key={item.link}>
+                  <Link rel="stylesheet" data-bold={item.title} href={item.link}>
+                    {item.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+      </header>
+    </>
+  );
+};
