@@ -41,7 +41,7 @@ async function fetchProjects(): Promise<ProjectProps[]> {
       ],
       page_size: 100,
     }),
-    next: { revalidate: 60 }, // 캐싱 옵션
+    cache: 'no-cache', // 캐싱 비활성화
   });
 
   if (!res.ok) {
