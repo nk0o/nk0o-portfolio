@@ -16,14 +16,14 @@ export const Header = () => {
   const nav: Array<navProps> = [
     {title:'About Me', link:'/aboutme'},
     {title:'Projects', link:'/projects'},
-    {title:'Contect Me', link:'/contect'},
+    {title:'Contact Me', link:'/contactme'},
   ]
 
   return (
     <>
       <header className={cx("header-wrapper")}>
           <h1>
-            <Link rel="stylesheet" href="./">
+            <Link href="./">
               <Image src={logoImg} alt="홈 화면으로 이동"  height={80} width={80} />
             </Link>
           </h1>
@@ -31,7 +31,7 @@ export const Header = () => {
             <ul>
               {nav.map((item) => (
                 <li key={item.link}>
-                  <Link rel="stylesheet" data-bold={item.title} href={item.link}>
+                  <Link data-bold={item.title} href={item.link}>
                     {item.title}
                   </Link>
                 </li>

@@ -8,7 +8,13 @@ const nextConfig: NextConfig = {
     //additionalData: `@import "styles/_mixins.scss";`,
   },
   reactStrictMode:true,
-  
+  images:{
+    domains:[
+      'www.notion.so',
+      'images.unsplash.com',
+      's3.us-west-2.amazonaws.com'
+    ]
+  }
 };
 
 export default nextConfig;

@@ -1,8 +1,9 @@
 import { TOKEN, DATABASE_ID } from '../../config/index';
-import { Properties } from './projectType'
+import { CoverImgProperty, Properties } from './projectType'
 import { ProjectItem } from '@/shared/ui/project-item/ProjectItem';
 
 export interface ProjectProps{
+  cover: CoverImgProperty | null;
   properties: Properties;
 }
 
@@ -15,7 +16,6 @@ export default async function ProjectsPage() {
         {projects.map((aProject: ProjectProps, index: number) => (
           <li key={index}>
             <ProjectItem data={aProject} />
-            {/* {aProject.properties.ProjectName.title[0].plain_text} */}
           </li>
         ))}
       </ul>
