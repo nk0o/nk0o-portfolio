@@ -21,16 +21,16 @@ export const Header = () => {
 
   return (
     <>
-      <header className={cx("header-wrapper")}>
+      <header className={cx("header__wrapper")}>
           <h1>
-            <Link href="./">
+            <Link href="./" className={cx("nav__logo")}>
               <Image src={logoImg} alt="홈 화면으로 이동"  height={80} width={80} />
             </Link>
           </h1>
-          <nav className={cx("nav-wrapper")}>
-            <ul>
+          <nav className={cx("nav__wrapper")}>
+            <ul className={cx("nav__menu")}>
               {nav.map((item) => (
-                <li key={item.link}>
+                <li key={item.link} className={cx("nav__item")}>
                   <Link data-bold={item.title} href={item.link}>
                     {item.title}
                   </Link>
