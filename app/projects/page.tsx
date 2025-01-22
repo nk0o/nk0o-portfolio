@@ -1,7 +1,9 @@
 import { TOKEN, DATABASE_ID } from '../../config/index';
 import { CoverImgProperty, Properties } from './projectType'
 import { ProjectItem } from '@/shared/ui/project-item/ProjectItem';
-
+import styles from "./page.module.scss";
+import cs from "classnames/bind";
+const cx = cs.bind(styles);
 export interface ProjectProps{
   cover: CoverImgProperty | null;
   properties: Properties;
@@ -11,15 +13,17 @@ export default async function ProjectsPage() {
   const projects = await fetchProjects();
 
   return (
-    <>
-      <ul>
-        {projects.map((aProject: ProjectProps, index: number) => (
-          <li key={index}>
-            <ProjectItem data={aProject} />
-          </li>
-        ))}
-      </ul>
-    </>
+    <div className={cx("project-page")}>
+        <div className={cx("project-page__inner")}>
+            <ul className={cx("project-list")}>
+              {projects.map((aProject: ProjectProps, index: number) => (
+                <li key={index}>
+                  <ProjectItem data={aProject} />
+                </li>
+              ))}
+            </ul>
+        </div>
+    </div>
   );
 }
 

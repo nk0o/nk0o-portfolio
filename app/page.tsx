@@ -4,7 +4,7 @@ const cx = cs.bind(styles);
 
 export default function Home() {
   return (
-    <main className={cx("main-wrpper")}>
+    <main className={cx("page__main")}>
        메인페이지
     </main>
   );

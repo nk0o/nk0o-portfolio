@@ -27,7 +27,7 @@ $common-colors: (
   /* Font size */
   --font-large: 48px;
   --font-medium: 28px;
-  --font-regular: 18px;
+  --font-regular: 20px;
   --font-small: 16px;
   --font-micro: 14px;
 
@@ -38,6 +38,9 @@ $common-colors: (
 
   /* Size */
   --size-border-radius: 4px; 
+  --size-box-border-radius: 16px; 
+  --header-height:80px;
+  --inner-width:1920px;
 
   /* Animation */
   --animation-duration:300ms;

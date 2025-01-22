@@ -1,10 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+// import Image from 'next/image';
+// import logoImg from"@/public/logo.png";
 import styles from "./header.module.scss";
 import cs from "classnames/bind";
 const cx = cs.bind(styles);
-import logoImg from"@/public/logo.png";
 
 
 export interface navProps {
@@ -22,9 +22,11 @@ export const Header = () => {
   return (
     <>
       <header className={cx("header__wrapper")}>
+        <div className={cx("header__inner")}>
           <h1>
-            <Link href="./" className={cx("nav__logo")}>
-              <Image src={logoImg} alt="홈 화면으로 이동"  height={80} width={80} />
+            <Link href="./" className={cx("header__logo")}>
+              {/* <Image src={logoImg} alt="홈 화면으로 이동"  height={80} width={80} /> */}
+              NK_Lee
             </Link>
           </h1>
           <nav className={cx("nav__wrapper")}>
@@ -38,6 +40,7 @@ export const Header = () => {
               ))}
             </ul>
           </nav>
+        </div>
       </header>
     </>
   );

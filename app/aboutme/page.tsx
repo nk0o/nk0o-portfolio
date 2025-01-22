@@ -5,6 +5,6 @@ const cx = cs.bind(styles);
 
 export default function AboutPage() {
   return (
-    <div className={cx("page-about")}>About Me</div>
+    <div className={cx("about-page")}>About Me</div>
   );
 }

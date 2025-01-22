@@ -1,3 +1,11 @@
-.main-wrapper {
+.main{
+    &__wrapper {
 
+    }
+    &__inner {
+        width: 100%;
+        max-width: var(--inner-width);
+        margin: 0 auto;
+        padding: 0 20px;
+    }
 }

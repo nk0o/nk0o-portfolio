@@ -18,12 +18,6 @@
  }
  
  // font
- @mixin ko {
-    font-family: $font-noto;
- }
- @mixin en {
-    font-family: $font-pop;
- }
  @mixin flexCenter {
    display: -webkit-box;
    display: flex;

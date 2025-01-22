@@ -16,8 +16,7 @@ export const DefaultLayout = (props:DefaultLayoutProps ) => {
                 <Header></Header>
 
                 <div id={cx("wrapper")}>
-                    
-                    {children}
+                        {children}
                 </div>
 
                 <Footer></Footer>
