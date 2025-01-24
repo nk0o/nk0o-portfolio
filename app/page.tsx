@@ -4,8 +4,10 @@ const cx = cs.bind(styles);
 
 export default function Home() {
   return (
-    <main className={cx("page__main")}>
-       메인페이지
+    <main className={cx("main__page")}>
+      <div className="wrapper__inner">
+        
+      </div>
     </main>
   );
 }

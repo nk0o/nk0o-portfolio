@@ -1,6 +1,6 @@
 .header {
   &__wrapper{
-    height: 80px;
+    height: var(--header-height);
     background-color:transparent;
     width: 100%;
     position: fixed;
@@ -17,10 +17,10 @@
   &__logo{
     font-size: var(--font-medium);
     font-weight: var(--weight-semi-bold);
+    color: var(--color-white);
   }
 }
 /* Navs */
-
 .nav{
   &__wrapper{
     margin-left: auto;

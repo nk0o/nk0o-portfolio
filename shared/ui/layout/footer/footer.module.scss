@@ -1,7 +1,41 @@
 .footer {
-  &-wrapper{
-    margin-top: autos;
-    height: 80px;
-    background-color: beige;
+  &__wrapper{
+    margin-top: auto;
+    flex:none;
+    padding: 50px;
+    padding-top: 70px;
+    text-align: center;
+  }
+  &__title {
+    margin:32px 0 16px;
+    font-size: var(--font-medium);
+    font-weight: var( --weight-bold);
+  }
+  &__title, &__description, &__copyright {
+    color:var(--color-white);
+  }
+  &__description{
+    display: block;
+    margin: 12px 0;
+  }
+  &__links {
+    width: 36px;
+    height: 36px;
+    margin: 0 auto 24px;
+    transition:all var(--animation-duration) ease-in;
+    color: var(--color-white);
+    a{
+      display: block;
+      svg{
+        height: 100%;
+      }
+    }
+    &:hover{
+      transform:scale(1.1);
+      color: #DC00B0;
+    }
+  }
+  &__copyright {
+    margin: 48px 0 0;
   }
 }

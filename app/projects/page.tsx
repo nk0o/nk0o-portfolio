@@ -14,7 +14,7 @@ export default async function ProjectsPage() {
 
   return (
     <div className={cx("project-page")}>
-        <div className={cx("project-page__inner")}>
+        <div className={cx("wrapper__inner")}>
             <ul className={cx("project-list")}>
               {projects.map((aProject: ProjectProps, index: number) => (
                 <li key={index}>

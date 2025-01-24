@@ -12,7 +12,7 @@ export const DefaultLayout = (props:DefaultLayoutProps ) => {
     const {children} = props;
     return (
         <>
-            <div className={cx("body-wrapper")}>
+            <div className={cx("body__wrapper")}>
                 <Header></Header>
 
                 <div id={cx("wrapper")}>

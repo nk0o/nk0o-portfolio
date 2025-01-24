@@ -1,11 +1,6 @@
 .project-page{
   background-color: antiquewhite;
-  &__inner {
-    width: 100%;
-    max-width: var(--inner-width);
-    margin: 0 auto;
-    padding: 0 20px;
-  }
+  padding: 50px 0;
 }
 .project-list{
   display: flex;

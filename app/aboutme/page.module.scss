@@ -1,11 +1,4 @@
-.about-page{
-  background-color: antiquewhite;
-  &__inner {
-    width: 100%;
-    max-width: var(--inner-width);
-    margin: 0 auto;
-    padding: 0 20px;
-  }
+.about__page{
 }
 
 @media (hover: hover) and (pointer: fine) {

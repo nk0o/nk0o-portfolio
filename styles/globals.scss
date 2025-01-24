@@ -48,7 +48,7 @@ $common-colors: (
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+   //--background: #0a0a0a;
     --foreground: #ededed;
   }
 }
@@ -109,7 +109,13 @@ p {
   color: var(--color-black);
   margin: 4px 0;
 }
-
+/* Layout */
+.wrapper__inner{
+  max-width: var(--inner-width);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 40px;
+}
 /*Arrow Top*/
 .arrow {
   opacity: 0;
