@@ -30,26 +30,26 @@ interface MultiSelectProperty {
   multi_select: Array<SkillSelectProperty>;
 }
 
-interface DescriptionProperty {
-  // id: string;
-  // type: "rich_text";
-  rich_text: Array<{
+export interface DescriptionRichTextProperty{
     text: {
-      content: string;
-      link: string | null;
+      content: string; // 텍스트 내용
+      link: string | null; // 링크가 있을 경우 URL, 없으면 null
     };
-    plain_text: string;
-    // type: "text";
-    // annotations: {
-    //   bold: boolean;
-    //   italic: boolean;
-    //   strikethrough: boolean;
-    //   underline: boolean;
-    //   code: boolean;
-    //   color: string;
-    // };
-    // href: string | null;
-  }>;
+    annotations: {
+      bold: boolean; // 굵게
+      italic: boolean; // 기울임
+      strikethrough: boolean; // 취소선
+      underline: boolean; // 밑줄
+      code: boolean; // 코드 스타일
+      color: string; // 색상 (예: "default", "red", "blue" 등)
+    };
+    plain_text: string; // 스타일이 제거된 순수 텍스트
+    href: string | null; // 하이퍼링크 (null일 수도 있음)
+}
+export interface DescriptionProperty {
+  id: string;
+  type: "rich_text";
+  rich_text: DescriptionRichTextProperty[];
 }
 
 interface DateProperty {

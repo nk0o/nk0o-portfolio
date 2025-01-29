@@ -21,7 +21,7 @@ $common-colors: (
 );
 :root {
   @each $name, $color in $common-colors {
-    --color-#{$name}: #{$color};
+    --color-#{"" + $name}: #{$color};
   }
 
   /* Font size */

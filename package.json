@@ -18,6 +18,7 @@
     "@storybook/addon-styling-webpack": "^1.0.1",
     "classnames": "^2.5.1",
     "css-loader": "^7.1.2",
+    "dompurify": "^3.2.3",
     "dotenv": "^16.4.7",
     "fortawesome": "^0.0.1-security",
     "next": "15.1.4",
