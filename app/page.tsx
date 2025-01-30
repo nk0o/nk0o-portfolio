@@ -1,3 +1,4 @@
+"use client";
 import cs from "classnames/bind";
 import styles from "./main.module.scss";
 import AnimationDeveloper from "@/shared/ui/animation/animationDeveloper";
