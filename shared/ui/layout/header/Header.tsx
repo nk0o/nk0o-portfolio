@@ -1,6 +1,7 @@
+"use client";  // 클라이언트 컴포넌트로 지정
+
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { throttle } from 'lodash';
 import styles from "./header.module.scss";
 import cs from "classnames/bind";
 const cx = cs.bind(styles);
@@ -23,15 +24,22 @@ export const Header = (props: HeaderProps) => {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    if (typeof window === "undefined") return; // 서버에서 실행되지 않도록 방어 코드 추가
+    if (typeof window === "undefined") return;  
 
-    const handleScroll = throttle(() => {
-      setScrolled(window.scrollY > 0);
-    }, 100);
+    let timeoutId: NodeJS.Timeout;
+
+    const handleScroll = () => {
+      clearTimeout(timeoutId);  
+      timeoutId = setTimeout(() => {
+        setScrolled(window.scrollY > 0);  
+      }, 100); 
+    };
 
     window.addEventListener('scroll', handleScroll);
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      clearTimeout(timeoutId); 
     };
   }, []);
 
