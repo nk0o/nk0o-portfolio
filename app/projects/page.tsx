@@ -16,10 +16,16 @@ export default async function ProjectsPage() {
     <div className={cx("project-page")}>
         <div className={cx("wrapper__inner")}>
             <ul className={cx("project-list")}>
-              {projects.map((aProject: ProjectProps, index: number) => (
-                <li key={index}>
-                  <ProjectItem data={aProject} />
-                </li>
+              {[...projects]
+                .sort((a, b) => {
+                  const dateA = a.properties.WorkPeriod.date.start ? new Date(a.properties.WorkPeriod.date.start).getTime() : 0; 
+                  const dateB = b.properties.WorkPeriod.date.start ? new Date(b.properties.WorkPeriod.date.start).getTime() : 0;
+                  return dateB - dateA; 
+                })
+                .map((aProject: ProjectProps, index: number) => (
+                  <li key={index}>
+                    <ProjectItem data={aProject} />
+                  </li>
               ))}
             </ul>
         </div>

@@ -7,6 +7,11 @@
     justify-content: flex-start;
     position: relative;
     background: url('/images/img_home_background.png') top center/cover no-repeat;
+    &.is-contact-page{
+        #wrapper{
+            flex: none;
+        }
+    }
 }
 #wrapper{
     flex: 1 1 0%;

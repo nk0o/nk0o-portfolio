@@ -45,7 +45,7 @@ export const ProjectItem = (props: ProjectItemProps) => {
   const uRL = data.properties.URL.url;
   const skillLanguage = data.properties.SkillLanguage.multi_select;
   const description = data.properties.Description.rich_text;
-  const coverImage = data.cover !== null ? data.cover.external.url : null;
+  const coverImage = (data.cover !== null) ? (data.cover.external?.url != null ? data.cover.external.url : (data.cover.file?.url != null ? data.cover.file.url : null)) : null;
   const [htmlContent, setHtmlContent] = useState('');
 
   useEffect(() => {
@@ -62,7 +62,7 @@ export const ProjectItem = (props: ProjectItemProps) => {
     <div className={cx('project-box')}>
       {coverImage && (
         <figure className={cx('project-box__img')}>
-          <Image src={coverImage} fill alt="프로젝트 이미지" />
+          <Image src={coverImage} fill alt="프로젝트 이미지" loading="lazy"/>
         </figure>
       )}
       <div className={cx('project-box__inner')}>

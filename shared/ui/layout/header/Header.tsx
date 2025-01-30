@@ -1,39 +1,57 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { throttle } from 'lodash';
 // import Image from 'next/image';
 // import logoImg from"@/public/logo.png";
 import styles from "./header.module.scss";
 import cs from "classnames/bind";
 const cx = cs.bind(styles);
 
-
 export interface navProps {
   title: string;
   link: string;
 }
-
-export const Header = () => {
+interface HeaderProps{
+  slug:string
+}
+export const Header = ( props: HeaderProps ) => {
+  const {slug} = props;
   const nav: Array<navProps> = [
-    {title:'About Me', link:'/aboutme'},
+    {title:'Home', link:'/'},
     {title:'Projects', link:'/projects'},
-    {title:'Contact Me', link:'/contactme'},
+    {title:'Contact', link:'/contactme'},
   ]
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = throttle(() => {
+      if (window.scrollY > 0) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    }, 100); 
+  
+    window.addEventListener('scroll', handleScroll);
+  
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
 
   return (
     <>
-      <header className={cx("header__wrapper")}>
+      <header className={cx("header__wrapper", { "is-scrolled": scrolled })}>
         <div className={cx("header__inner")}>
           <h1>
-            <Link href="./" className={cx("header__logo")}>
-              {/* <Image src={logoImg} alt="홈 화면으로 이동"  height={80} width={80} /> */}
-              NK_Lee
-            </Link>
+            <Link href="./" className={cx("header__logo")}>NK_Lee</Link>
           </h1>
           <nav className={cx("nav__wrapper")}>
             <ul className={cx("nav__menu")}>
               {nav.map((item) => (
-                <li key={item.link} className={cx("nav__item")}>
-                  <Link data-bold={item.title} href={item.link}>
+                <li key={item.link} className={cx("nav__menu__item", slug == item.link.split("/").pop() ? "active": undefined)}>
+                  <Link href={item.link}>
                     {item.title}
                   </Link>
                 </li>

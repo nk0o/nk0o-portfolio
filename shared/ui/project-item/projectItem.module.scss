@@ -1,11 +1,11 @@
 @use "@/styles/_mixins" as mixin;
 .project-box{
-    background-color: #efefef;
+    background-color: var(--color-white);
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     border-radius: var(--size-box-border-radius);
     overflow: hidden;
     transition: all var(--animation-duration);
-    &__inner{        
+    &__inner{
         padding: 16px;
         display: flex;
         flex-direction: column;
@@ -15,12 +15,20 @@
     }
     &__img{
         position: relative;
-        height: 160px;
+        height: 200px;
         img{
             object-fit: cover;
         }
+        &::before{
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            background-color: rgba(0,0,0,0.2);
+        }
     }
     &__title{
+        margin-bottom: 12px;
         display: flex;
         align-items: center;
         font-size: var(--font-regular);
@@ -28,7 +36,7 @@
         line-height: 1.2;
     }
     &__desc{
-        margin-bottom: 16px;
+        margin-bottom: 32px;
         p, li{
             display: flex;
             margin-top: 4px;
@@ -69,8 +77,8 @@
         padding: 0 12px;
         font-size: var(--font-micro);
         border-radius: var(--size-border-radius);
-        background-color: #fe918d;
-        color: var(--color-black-3);
+        background-color:var(--color-dark-white);
+        color: var(--color-white);
         cursor: default;
     }   
 }

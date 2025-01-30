@@ -1,23 +1,34 @@
 .header {
   &__wrapper{
+    z-index: 1111;
     height: var(--header-height);
-    background-color:transparent;
     width: 100%;
     position: fixed;
-    transition: all var(--animation-duration);
+    background-color: transparent;
+    transition: padding var(--animation-duration);
+    padding: 0 12px;
+    &.is-scrolled{
+      background-color:var(--color-pink);
+      padding: 0;
+    }
   }
   &__inner{
     display: flex;
     align-items: center;
+    height: 100%;
     width: 100%;
     max-width: var(--inner-width);
     margin: 0 auto;
     padding: 0 20px;
+    @media screen and (max-width:768px) {
+     flex-direction: column;
+    }
   }
   &__logo{
     font-size: var(--font-medium);
     font-weight: var(--weight-semi-bold);
     color: var(--color-white);
+    vertical-align: middle;
   }
 }
 /* Navs */
@@ -28,45 +39,47 @@
     justify-content: space-between;
     align-items: center;
     background-color:transparent;
-    padding: 16px; 
+    padding: 16px 0; 
     color: var(--color-white);
     transition: all var(--animation-duration) ease-in-out; 
     z-index: 400;  
     &.navbar--dark{
-      background-color:var(--color-pink);     
+      background-color:var(--color-pink);
       padding: 8px; 
     }
-    ul{
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      a{
-        position: relative;
-        transition: all .9s;
-        &:hover{
-          top: -2px;
-        }
-      }
+    @media screen and (max-width:768px) {
+      margin:0;
+      padding: 8px 0; 
     }
   }
   &__menu {
-    display: flex;   
-    &__item{
-      padding: 8px 12px; 
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    &__item{      
       margin:0 4px;
       cursor: pointer;
       color:var(--color-white);
-      border:1px solid transparent;
-      border-radius: var(--size-border-radius);
-    }
-    &__item.active{
-      border-radius: var(--size-border-radius);
-      border:1px solid var(--color-white);
-    } 
-    &__item:hover{
-      border:1px solid var(--color-white);
-      border-radius: var(--size-border-radius);
-      background-color: var(--color-dark-pink);
+      transition: all var(--animation-duration);
+      &.active{
+        a{
+          border-radius: var(--size-border-radius);
+          border:1px solid var(--color-white);
+        }
+      } 
+      a{
+        position: relative;
+        display: block;
+        padding: 8px 12px;
+        border:1px solid transparent;
+        transition: all var(--animation-duration);
+        border-radius: var(--size-border-radius);
+        text-align: center;
+        &:hover{
+          border: 1px solid var(--color-white);
+          transform: translateY(-2px);
+        }
+      }
     }
   }
   &__toggle-btn{
