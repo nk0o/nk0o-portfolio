@@ -1,4 +1,4 @@
-.body__wrapper{
+.body__wrapper {
     display: flex;
     min-height: 100dvh;
     min-width: 280px;
@@ -6,14 +6,16 @@
     align-items: stretch;
     justify-content: flex-start;
     position: relative;
-    background: url('/images/img_home_background.png') top center/cover no-repeat;
-    &.is-contact-page{
-        #wrapper{
+
+    // background: url('/images/img_home_background.png') top center/cover no-repeat;
+    &.is-contact-page {
+        #wrapper {
             flex: none;
         }
     }
 }
-#wrapper{
+
+#wrapper {
     flex: 1 1 0%;
     margin: 0 auto;
     display: flex;
