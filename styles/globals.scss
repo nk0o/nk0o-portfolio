@@ -1,10 +1,11 @@
 @use './reset.scss';
+@import "tailwindcss";
 /* Global */
 $common-colors: (
-  white: #ffffff, 
+  white: #ffffff,
   black-0: #000000,
-  black-1: #DBDBDB, 
-  black-2: #666666, 
+  black-1: #DBDBDB,
+  black-2: #666666,
   black-3: #1F1F1F,
   primary: #0F62FE,
   dark-navy:#2e3d49,
@@ -20,6 +21,7 @@ $common-colors: (
   yellow: #fff7d1,
   orange: #feb546,
 );
+
 :root {
   @each $name, $color in $common-colors {
     --color-#{"" + $name}: #{$color};
@@ -38,23 +40,24 @@ $common-colors: (
   --weight-regular: 400;
 
   /* Size */
-  --size-border-radius: 4px; 
-  --size-box-border-radius: 16px; 
+  --size-border-radius: 4px;
+  --size-box-border-radius: 16px;
   --header-height:80px;
   --inner-width:1920px;
 
   /* Animation */
   --animation-duration:300ms;
 }
+
 @media screen and (max-width:768px) {
   :root {
-    --header-height:120px;
+    --header-height: 120px;
   }
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-   //--background: #0a0a0a;
+    //--background: #0a0a0a;
     --foreground: #ededed;
   }
 }
@@ -64,22 +67,25 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
 }
+
 body {
-  color: var(--color-black-2);
-  background: var(--color-black-0);
+  color: var(--color-black-3);
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
+
 a {
   color: inherit;
   text-decoration: none;
 }
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
@@ -93,6 +99,7 @@ h1 {
   font-weight: var(--weight-bold);
   color: var(--color-black);
   margin: 16px 0;
+
   @media screen and (max-width:768px) {
     margin: 8px 0;
   }
@@ -118,16 +125,19 @@ p {
   color: var(--color-black);
   margin: 4px 0;
 }
+
 /* Layout */
-.wrapper__inner{
+.wrapper__inner {
   max-width: var(--inner-width);
   width: 100%;
   margin: 0 auto;
   padding: 64px 40px;
+
   @media screen and (max-width:768px) {
     padding: 40px 20px;
   }
 }
+
 /*Arrow Top*/
 .arrow {
   opacity: 0;
@@ -138,14 +148,16 @@ p {
   z-index: 400;
   border-radius: 50%;
   background-color: white;
-  border:2px solid transparent;
+  border: 2px solid transparent;
   cursor: pointer;
-  transition: all var(--animation-duration) linear; 
+  transition: all var(--animation-duration) linear;
 }
+
 .arrow.visuable {
   opacity: 1;
   pointer-events: auto;
 }
+
 .arrow-top {
   color: var(--color-pink);
   font-size: var(--font-large);

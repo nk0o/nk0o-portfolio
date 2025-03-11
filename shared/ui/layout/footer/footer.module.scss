@@ -1,44 +1,55 @@
 .footer {
-  &__wrapper{
+  &__wrapper {
     position: relative;
     margin-top: auto;
-    flex:none;
+    flex: none;
     padding: 30px 0 50px;
     text-align: center;
     transition: all var(--animation-duration);
   }
-  &__contact{
+
+  &__contact {
     transition: all var(--animation-duration);
   }
+
   &__title {
-    margin:0 0 16px;
+    margin: 0 0 16px;
     font-size: var(--font-medium);
-    font-weight: var( --weight-bold);
+    font-weight: var(--weight-bold);
   }
-  &__title, &__description, &__copyright {
-    color:var(--color-white);
+
+  &__title,
+  &__description,
+  &__copyright {
+    color: var(--color-black-3);
   }
-  &__description{
+
+  &__description {
     display: block;
     margin: 12px 0;
   }
+
   &__links {
     width: 28px;
     height: 28px;
     margin: 0 auto 24px;
-    transition:all var(--animation-duration) ease-in;
-    color: var(--color-white);
-    a{
+    transition: all var(--animation-duration) ease-in;
+    color: var(--color-black-3);
+
+    a {
       display: block;
-      svg{
+
+      svg {
         height: 100%;
       }
     }
-    &:hover{
-      transform:scale(1.1);
-      color: #DC00B0;
+
+    &:hover {
+      transform: scale(1.1);
+      color: var(--color-black-1);
     }
   }
+
   &__copyright {
     margin: 48px 0 0;
     position: absolute;
@@ -48,10 +59,11 @@
   }
 }
 
-.is-contact-page{
+.is-contact-page {
   flex: 100%;
   padding-top: 20px;
-  .footer__contact{
+
+  .footer__contact {
     transform: scale(1.9);
   }
 }
