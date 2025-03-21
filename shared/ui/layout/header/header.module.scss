@@ -4,7 +4,7 @@
     height: var(--header-height);
     width: 100%;
     position: fixed;
-    background-color: transparent;
+    background-color: var(--color-white);
     transition: padding var(--animation-duration);
     padding: 0 12px;
 
