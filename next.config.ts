@@ -1,20 +1,20 @@
-import type { NextConfig } from "next";
-import path from "path";
+import type { NextConfig } from 'next';
+import path from 'path';
 
 const nextConfig: NextConfig = {
   /* config options here */
   sassOptions: {
-    includePaths: [path.join(__dirname, "styles")],
+    includePaths: [path.join(__dirname, 'styles')],
     //additionalData: `@import "styles/_mixins.scss";`,
   },
-  reactStrictMode:true,
-  images:{
-    domains:[
+  reactStrictMode: true,
+  images: {
+    domains: [
       'www.notion.so',
       'images.unsplash.com',
-      's3.us-west-2.amazonaws.com'
-    ]
-  }
+      's3.us-west-2.amazonaws.com',
+    ],
+  },
 };
 module.exports = {
   images: {

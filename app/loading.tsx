@@ -1,5 +1,7 @@
-import React from "react";
+'use client';
+import { CsLoading } from '@/shared/ui/loading/CsLoading';
+import React from 'react';
 
 export default function Loading() {
-    return <div>Loading..!</div>;
+  return CsLoading;
 }
