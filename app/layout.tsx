@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google';
-import '@/styles/globals.scss';
+import '@/styles/common.scss';
 import { ReactNode } from 'react';
 import { DefaultLayout } from '@/shared/ui/layout/DefaultLayout';
 import { config } from '@fortawesome/fontawesome-svg-core';

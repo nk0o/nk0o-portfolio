@@ -1,20 +1,20 @@
-import type { StorybookConfig } from "@storybook/nextjs";
-import path from "path";
+import type { StorybookConfig } from '@storybook/nextjs';
+import path from 'path';
 
 const config: StorybookConfig = {
   stories: [
-    "../styles/**/*.mdx",
-    "../styles/**/*.stories.@(js|jsx|mjs|ts|tsx)",
-    "../shared/**/*.mdx",
-    "../shared/**/*.stories.@(js|jsx|mjs|ts|tsx)",
+    '../styles/**/*.mdx',
+    '../styles/**/*.stories.@(js|jsx|mjs|ts|tsx)',
+    '../shared/**/*.mdx',
+    '../shared/**/*.stories.@(js|jsx|mjs|ts|tsx)',
   ],
   addons: [
-    "@storybook/addon-onboarding",
-    "@storybook/addon-essentials",
-    "@chromatic-com/storybook",
-    "@storybook/addon-interactions",
+    '@storybook/addon-onboarding',
+    '@storybook/addon-essentials',
+    '@chromatic-com/storybook',
+    '@storybook/addon-interactions',
     {
-      name: "@storybook/addon-styling-webpack",
+      name: '@storybook/addon-styling-webpack',
       options: {
         rules: [
           {
@@ -23,21 +23,20 @@ const config: StorybookConfig = {
               'style-loader',
               'css-loader',
               {
-                loader: require.resolve("css-loader"),
+                loader: require.resolve('css-loader'),
                 options: {
                   importLoaders: 2,
                 },
               },
-              require.resolve("resolve-url-loader"),
+              require.resolve('resolve-url-loader'),
               {
-                loader: require.resolve("sass-loader"),
+                loader: require.resolve('sass-loader'),
                 options: {
                   // Want to add more Sass options? Read more here https://webpack.js.org/loaders/sass-loader/#options
-                  implementation: require.resolve("sass"),
+                  implementation: require.resolve('sass'),
                   additionalData: `
-                    @import "styles/_mixins.scss";
-                    @import "styles/globals.scss";
-                  `, 
+                    @import "styles/common.scss";
+                  `,
                   sourceMap: false,
                   sassOptions: {
                     includePaths: [path.resolve(__dirname, '../node_modules')],
@@ -47,11 +46,11 @@ const config: StorybookConfig = {
             ],
           },
         ],
-      }
-    }
+      },
+    },
   ],
   framework: {
-    name: "@storybook/nextjs",
+    name: '@storybook/nextjs',
     options: {},
   },
   staticDirs: ['../public'],

@@ -1,6 +1,6 @@
 import React from 'react';
 import cs from 'classnames/bind';
-import styles from './CsLoading.module.scss';
+import styles from './csLoading.module.scss';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
