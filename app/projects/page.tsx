@@ -1,6 +1,6 @@
 import { TOKEN, DATABASE_ID } from '../../config/index';
 import { CoverImgProperty, Properties } from './projectType'
-import { ProjectItem } from '@/shared/ui/project-item/ProjectItem';
+import { ProjectItem } from '@/components/ui/project-item/ProjectItem';
 import styles from "./page.module.scss";
 import cs from "classnames/bind";
 const cx = cs.bind(styles);

@@ -1,7 +1,7 @@
 "use client";
 import cs from "classnames/bind";
 import styles from "./main.module.scss";
-import AnimationDeveloper from "@/shared/ui/animation/animationDeveloper";
+import AnimationDeveloper from "@/components/ui/animation/animationDeveloper";
 const cx = cs.bind(styles);
 
 export default function Home() {

@@ -5,8 +5,8 @@ const config: StorybookConfig = {
   stories: [
     '../styles/**/*.mdx',
     '../styles/**/*.stories.@(js|jsx|mjs|ts|tsx)',
-    '../shared/**/*.mdx',
-    '../shared/**/*.stories.@(js|jsx|mjs|ts|tsx)',
+    '../components/**/*.mdx',
+    '../components/**/*.stories.@(js|jsx|mjs|ts|tsx)',
   ],
   addons: [
     '@storybook/addon-onboarding',

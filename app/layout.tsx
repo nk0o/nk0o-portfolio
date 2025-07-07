@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google';
 import '@/styles/common.scss';
 import { ReactNode } from 'react';
-import { DefaultLayout } from '@/shared/ui/layout/DefaultLayout';
+import { DefaultLayout } from '@/components/layout/DefaultLayout';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 config.autoAddCss = false;
