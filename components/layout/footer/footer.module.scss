@@ -21,7 +21,7 @@
   &__title,
   &__description,
   &__copyright {
-    color: var(--color-black-3);
+    color: var(--color-text-default);
   }
 
   &__description {
@@ -34,7 +34,7 @@
     height: 28px;
     margin: 0 auto 24px;
     transition: all var(--animation-duration) ease-in;
-    color: var(--color-black-3);
+    color: var(--color-text-default);
 
     a {
       display: block;
@@ -46,7 +46,7 @@
 
     &:hover {
       transform: scale(1.1);
-      color: var(--color-black-1);
+      color: var(--color-gray-300);
     }
   }
 

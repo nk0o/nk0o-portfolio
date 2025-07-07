@@ -1,20 +1,23 @@
 // 함수 모음
 @use "sass:math";
+@use "variables";
 
 /// Number filter
 /// 단위 제거
 @function extract-number($n) {
-    @return math.div($n, $n * 0 + 1);
+  @return math.div($n, $n * 0 + 1);
 }
 
 @function px-to-rem($pixel, $base-size: 16px) {
-    @if unit($pixel) == "px" {
-        @return calc(extract-number($pixel) / extract-number($base-size)) + 0rem;
-    } @else {
-        @return $pixel;
-    }
+  @if unit($pixel)=="px" {
+    @return calc(extract-number($pixel) / extract-number($base-size))+0rem;
+  }
+
+  @else {
+    @return $pixel;
+  }
 }
 
 @function px-to-vw($pixel, $viewport-size: 1024 - 1px) {
-    @return calc(($pixel * 100) / $viewport-size) * 1vw;
+  @return calc(($pixel * 100) / $viewport-size) * 1vw;
 }

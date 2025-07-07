@@ -1,3 +1,5 @@
+@use "variables";
+
 //breakpoint
 @mixin mobile {
   @media (max-width: #{$breakpoint-tablet}) {

@@ -9,13 +9,13 @@
 
   &--primary {
     background-color: #1ea7fd;
-    color: var(--color-black-3);
+    color: var(--color-text-default);
   }
 
   &--secondary {
     box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
     background-color: transparent;
-    color: var(--color-black-3);
+    color: var(--color-text-default);
   }
 
   &--small {

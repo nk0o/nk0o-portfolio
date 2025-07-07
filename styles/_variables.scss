@@ -1,23 +1,50 @@
 $common-colors: (
-  white: #ffffff,
   black-0: #000000,
-  black-1: #DBDBDB,
+  black-3: #1f1f1f,
+  black-1: #dbdbdb,
   black-2: #666666,
-  black-3: #1F1F1F,
-  primary: #0F62FE,
-  dark-navy:#2e3d49,
-  secondary: #FF5151,
-  light-white: #eeeeee,
-  dark-white: #bdbdbd,
+
+  // 브랜드 & 테마 색상
+  primary: #0f62fe,
+  secondary: #ff5151,
+  accent: #00ff00,
+
+  blue: #73aace,
+  dark-navy: #2e3d49,
   pink: #fe918d,
   dark-pink: #ff6863,
   dark-grey: #4d4d4d,
-  grey: #616161,
   light-grey: #7c7979,
-  blue: #73aace,
   yellow: #fff7d1,
   orange: #feb546,
-);
+
+  // 상태 색상
+  success: #2ecc71,
+  warning: #f1c40f,
+  error: #e74c3c,
+  info: #3498db,
+
+  // 그레이 스케일
+  white: #ffffff,
+  light-white: #eeeeee,
+  dark-white: #bdbdbd,
+
+  gray-100: #f8f9fa,
+  gray-200: #e9ecef,
+  gray-300: #dee2e6,
+  gray-400: #ced4da,
+  gray-500: #adb5bd,
+  gray-600: #6c757d,
+  gray-700: #495057,
+  gray-800: #343a40,
+  gray-900: #212529,
+
+
+  ) !default;
+
+// animation, transition
+$duration: 200ms !default;
+$easing: ease-in-out !default;
 
 :root {
   @each $name, $color in $common-colors {
@@ -39,22 +66,52 @@ $common-colors: (
   /* Size */
   --size-border-radius: 4px;
   --size-box-border-radius: 16px;
-  --header-height:80px;
-  --inner-width:1920px;
+  --header-height: 80px;
+  --inner-width: 1920px;
 
   /* Animation */
-  --animation-duration:300ms;
-}
+  --animation-duration: 300ms;
 
-@media screen and (max-width:768px) {
-  :root {
-    --header-height: 120px;
+  // 텍스트
+  --color-text-default: $color-gray-300,
+  --color-text-light: $color-gray-200,
+
+  // 배경
+  --color-background: $color-white,
+  --color-background-alt: $color-pink,
+
+  // 선
+  --color-border: $color-gray-600,
+  --color-divider: $color-gray-400,
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      // 텍스트
+      // 텍스트
+      --color-text-default: $color-gray-300;
+      --color-text-light: $color-gray-500;
+
+      // 배경
+      --color-background: $color-black-3;
+      --color-background-alt: $color-dark-navy;
+
+      // 선
+      --color-border: $color-dark-grey;
+      --color-divider: $color-gray-600;
+    }
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    //--background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.dark {
+  // 텍스트
+  --color-text-default: $color-gray-300;
+  --color-text-light: $color-gray-500;
+
+  // 배경
+  --color-background: $color-black-3;
+  --color-background-alt: $color-dark-navy;
+
+  // 선
+  --color-border: $color-dark-grey;
+  --color-divider: $color-gray-600;
 }
