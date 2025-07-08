@@ -1,56 +1,56 @@
 @use 'variables';
 
-// $mobile: 375px + $gap !default;
-// $tablet: 768px + $gap !default;
-// $desktop: 1024px + $gap !default;
-// $laptop: 1366px + $gap !default;
-// $fullhd: 1920px + $gap !default;
-// $qhd: 2560px + $gap !default;
+/* $mobile: 375px + $gap !default; */
+/* $tablet: 768px + $gap !default; */
+/* $desktop: 1024px + $gap !default; */
+/* $laptop: 1366px + $gap !default; */
+/* $fullhd: 1920px + $gap !default; */
+/* $qhd: 2560px + $gap !default; */
 
-// Breakpoint (Mobile First)
-// tablet ~
+/* Breakpoint (Mobile First) */
+/* tablet ~ */
 @mixin tablet {
   @media screen and (min-width: var.$desktop) {
     @content;
   }
 }
 
-// desktop ~
+/* desktop ~ */
 @mixin desktop {
   @media screen and (min-width: var.$desktop) {
     @content;
   }
 }
 
-// tablet ~
+/* tablet ~ */
 @mixin tablet {
   @media screen and (min-width: var.$desktop) {
     @content;
   }
 }
 
-// $device ~
+/* $device ~ */
 @mixin from($device) {
   @media screen and (min-width: $device) {
     @content;
   }
 }
 
-// ~ $device
+/* ~ $device */
 @mixin until($device) {
   @media screen and (max-width: ($device - 1px)) {
     @content;
   }
 }
 
-// $device1 ~ $device2
+/* $device1 ~ $device2 */
 @mixin between($device1, $device2) {
   @media screen and (min-width: $device1) and (max-width: ($device2 - 1px)) {
     @content;
   }
 }
 
-// font
+/* font */
 @mixin flexCenter {
   display: -webkit-box;
   display: flex;
@@ -90,7 +90,7 @@
   word-wrap: break-word;
 }
 
-// 말줄임 설정
+/* 말줄임 설정 */
 @mixin text-ellipsis {
   display: block;
   overflow: hidden;

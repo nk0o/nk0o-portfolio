@@ -1,4 +1,4 @@
-// common.scss 전역 css
+/* common.scss 전역 css */
 @use './variables' as var;
 @use './mixins';
 @use './reset';
@@ -28,48 +28,48 @@
   --header-height: 80px;
   --inner-width: 1920px;
 
-  // 텍스트
+  /* 텍스트 */
   --color-text-default: var(--color-gray-300),
   --color-text-light: var(--color-gray-200),
 
-  // 배경
+  /* 배경 */
   --color-background: var(--color-white),
   --color-background-alt: var(--color-pink),
 
-  // 선
+  /* 선 */
   --color-border: var(--color-gray-600),
   --color-divider: var(--color-gray-400),
 
 }
 
-// Dark Mode Variables
+/* Dark Mode Variables */
 @media (prefers-color-scheme: dark) {
   :root {
-    // 텍스트
+    /* 텍스트 */
     --color-text-default: var(--color-gray-300);
     --color-text-light: var(--color-gray-500);
 
-    // 배경
+    /* 배경 */
     --color-background: var(--color-gray-600);
     --color-background-alt: var(--color-dark-navy);
 
-    // 선
+    /* 선 */
     --color-border: var(--color-dark-grey);
     --color-divider: var(--color-gray-600);
   }
 }
 
-
+/* 다크모드 */
 .dark {
-  // 텍스트
+  /* 텍스트 */
   --color-text-default: var(--color-gray-300);
   --color-text-light: var(--color-gray-500);
 
-  // 배경
+  /* 배경 */
   --color-background: var(--color-gray-600);
   --color-background-alt: var(--color-dark-navy);
 
-  // 선
+  /* 선 */
   --color-border: var(--color-dark-grey);
   --color-divider: var(--color-gray-600);
 }

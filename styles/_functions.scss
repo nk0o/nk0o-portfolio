@@ -1,9 +1,5 @@
-// 함수 모음
-@use "sass:math";
-@use "variables";
-
-/// Number filter
-/// 단위 제거
+/* Number filter */
+/* 단위 제거 */
 @function extract-number($n) {
   @return math.div($n, $n * 0 + 1);
 }

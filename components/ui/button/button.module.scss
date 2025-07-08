@@ -7,6 +7,10 @@
   line-height: 1;
   font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
+  &__wrapper {
+    display: flex;
+  }
+
   &--primary {
     background-color: #1ea7fd;
     color: var(--color-text-default);

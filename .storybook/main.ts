@@ -21,18 +21,19 @@ const config: StorybookConfig = {
             test: /\.scss$/,
             use: [
               'style-loader',
-              'css-loader',
               {
                 loader: require.resolve('css-loader'),
                 options: {
                   importLoaders: 2,
+                  modules: {
+                    auto: /\.module\.scss$/, // .module.scss 파일에만 CSS 모듈 적용
+                  },
                 },
               },
               require.resolve('resolve-url-loader'),
               {
                 loader: require.resolve('sass-loader'),
                 options: {
-                  // Want to add more Sass options? Read more here https://webpack.js.org/loaders/sass-loader/#options
                   implementation: require.resolve('sass'),
                   additionalData: `
                     @import "styles/common.scss";

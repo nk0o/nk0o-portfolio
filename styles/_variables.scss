@@ -1,6 +1,6 @@
-// Colors
 $common-colors: (
-  // 브랜드 & 테마 색상
+  /* Colors */
+  /* 브랜드 & 테마 색상 */
   primary: #0f62fe,
   secondary: #ff5151,
   accent: #00ff00,
@@ -14,13 +14,13 @@ $common-colors: (
   yellow: #fff7d1,
   orange: #feb546,
 
-  // 상태 색상
+  /* 상태 색상 */
   success: #2ecc71,
   warning: #f1c40f,
   error: #e74c3c,
   info: #3498db,
 
-  // 그레이 스케일
+  /* 그레이 스케일 */
   white: #ffffff,
   light-white: #eeeeee,
   dark-white: #bdbdbd,
@@ -36,11 +36,11 @@ $common-colors: (
   gray-900: #212529
 );
 
-// animation, transition
+/* animation, transition */
 $duration: 200ms !default;
 $easing: ease-in-out !default;
 
-// Breakpoint
+/* Breakpoint */
 $gap: 1px !default;
 $mobile: 375px + $gap !default;
 $tablet: 768px + $gap !default;

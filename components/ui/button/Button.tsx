@@ -14,9 +14,9 @@ export interface ButtonProps {
 export const Button = ({ primary = false, size = 'medium', backgroundColor, label }: ButtonProps) => {
   const mode = primary ? 'button--primary' : 'button--secondary';
   return (
-    <div className={cx("btn-wrapper button", 
-        backgroundColor ?
-          (backgroundColor == "secondary")? "btn-secondary" : "btn-primary" : "btn-default")}>
+    <div className={cx("button__wrapper button",
+      backgroundColor ?
+        (backgroundColor == "secondary") ? "button-secondary" : "button-primary" : "button-default")}>
       <button type="button" className={['button', `button--${size}`, mode].join(' ')}>
         {label}
       </button>

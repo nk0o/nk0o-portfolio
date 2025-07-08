@@ -1,9 +1,11 @@
-
 import type { Meta, StoryObj } from '@storybook/react';
-import {Button} from './Button';
+import { fn } from '@storybook/test';
+
+import { Button } from './Button';
 
 const meta = {
   component: Button,
+  args: { onClick: fn() },
 } satisfies Meta<typeof Button>;
 
 export default meta;
@@ -11,9 +13,9 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    primary: false,
-    backgroundColor: 'black',
-    size: 'small',
-    label: '작은 버튼',
+    primary: true,
+    label: 'Button',
+    backgroundColor: 'red',
+    size: 'large',
   },
 };
