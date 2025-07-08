@@ -1,20 +1,51 @@
-@use "variables";
+@use 'variables';
 
-//breakpoint
-@mixin mobile {
-  @media (max-width: #{$breakpoint-tablet}) {
-    @content;
-  }
-}
+// $mobile: 375px + $gap !default;
+// $tablet: 768px + $gap !default;
+// $desktop: 1024px + $gap !default;
+// $laptop: 1366px + $gap !default;
+// $fullhd: 1920px + $gap !default;
+// $qhd: 2560px + $gap !default;
 
+// Breakpoint (Mobile First)
+// tablet ~
 @mixin tablet {
-  @media (max-width: #{$breakpoint-desktop}) {
+  @media screen and (min-width: var.$desktop) {
     @content;
   }
 }
 
+// desktop ~
 @mixin desktop {
-  @media (min-width: #{$breakpoint-desktop}) {
+  @media screen and (min-width: var.$desktop) {
+    @content;
+  }
+}
+
+// tablet ~
+@mixin tablet {
+  @media screen and (min-width: var.$desktop) {
+    @content;
+  }
+}
+
+// $device ~
+@mixin from($device) {
+  @media screen and (min-width: $device) {
+    @content;
+  }
+}
+
+// ~ $device
+@mixin until($device) {
+  @media screen and (max-width: ($device - 1px)) {
+    @content;
+  }
+}
+
+// $device1 ~ $device2
+@mixin between($device1, $device2) {
+  @media screen and (min-width: $device1) and (max-width: ($device2 - 1px)) {
     @content;
   }
 }
@@ -113,7 +144,7 @@
   transform: translateY(-50%);
   width: 16px;
   height: 16px;
-  @include iconImgPath("ico_select_down.svg");
+  @include iconImgPath('ico_select_down.svg');
 }
 
 @mixin blind {
@@ -126,22 +157,4 @@
   text-indent: -9999px;
   border: 0;
   clip: rect(0, 0, 0, 0);
-}
-
-@mixin iconImgPath($iconName) {
-  // 지원안되는 브라우저 (색상변경은 안됨)
-  background-image: url("../images/icon/#{$iconName}");
-  background-size: cover;
-
-  // 지원되는 브라우저
-  @supports (-webkit-mask-image: url()) or (mask-image: url()) {
-    background-color: #1f1f1f;
-    -webkit-mask-image: url("../images/icon/#{$iconName}");
-    mask-image: url("../images/icon/#{$iconName}");
-    -webkit-mask-size: cover;
-    mask-size: cover;
-    background-image: none;
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-  }
 }

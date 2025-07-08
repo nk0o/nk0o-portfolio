@@ -1,84 +1,99 @@
 @use "@/styles/_mixins" as mixin;
-.project-box{
-    background-color: var(--color-white);
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-    border-radius: var(--size-box-border-radius);
-    overflow: hidden;
-    transition: all var(--animation-duration);
-    &__inner{
-        padding: 16px;
-        display: flex;
-        flex-direction: column;
-        min-height: 20px;
-        height: 100%;
-        width: 100%;
-    }
-    &__img{
-        position: relative;
-        height: 200px;
-        img{
-            object-fit: cover;
-        }
-        &::before{
-            content: '';
-            position: absolute;
-            inset: 0;
-            z-index: 2;
-            background-color: rgba(0,0,0,0.2);
-        }
-    }
-    &__title{
-        margin-bottom: 12px;
-        display: flex;
-        align-items: center;
-        font-size: var(--font-regular);
-        font-weight: var(--weight-bold);
-        line-height: 1.2;
-    }
-    &__desc{
-        margin-bottom: 32px;
-        p, li{
-            display: flex;
-            margin-top: 4px;
-            margin-left: 4px;
-            font-size: var(--font-small);
-            line-height: 1.35;
-            &::before{
-                content: '-';
-                display:inline-block;
-                flex: none;
-                width: 12px;
-                font: inherit;
-                line-height: 1;
-            }
-        }
-    }
-    &__link{
-        font-size: 0;
-        display: block;
-        width: 24px;
-        height: 28px;
-    }
-    &__date{
-        margin-top: auto;
-        margin-bottom: 8px;
-        font-size: var(--font-micro);
-    }
-    .skill-list{
-        margin-bottom: 8px;
-    }
-}
-.skill-list{
+
+.project-box {
+  background-color: var(--color-white);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border-radius: var(--size-box-border-radius);
+  overflow: hidden;
+  transition: all var(--animation-duration);
+
+  &__inner {
+    padding: 16px;
     display: flex;
-    gap: 8px;
-    &__item{
-        @include mixin.flexCenter;
-        height: 24px;
-        padding: 0 12px;
-        font-size: var(--font-micro);
-        border-radius: var(--size-border-radius);
-        background-color:var(--color-dark-white);
-        color: var(--color-white);
-        cursor: default;
-    }   
+    flex-direction: column;
+    min-height: 20px;
+    height: 100%;
+    width: 100%;
+  }
+
+  &__img {
+    position: relative;
+    height: 200px;
+
+    img {
+      object-fit: cover;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  &__title {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    font-size: var(--font-regular);
+    font-weight: var(--weight-bold);
+    line-height: 1.2;
+  }
+
+  &__desc {
+    margin-bottom: 32px;
+
+    p,
+    li {
+      display: flex;
+      margin-top: 4px;
+      margin-left: 4px;
+      font-size: var(--font-small);
+      line-height: 1.35;
+
+      &::before {
+        content: '-';
+        display: inline-block;
+        flex: none;
+        width: 12px;
+        font: inherit;
+        line-height: 1;
+      }
+    }
+  }
+
+  &__link {
+    font-size: 0;
+    display: block;
+    width: 24px;
+    height: 28px;
+  }
+
+  &__date {
+    margin-top: auto;
+    margin-bottom: 8px;
+    font-size: var(--font-micro);
+  }
+
+  .skill-list {
+    margin-bottom: 8px;
+  }
+}
+
+.skill-list {
+  display: flex;
+  gap: 8px;
+
+  &__item {
+    @include mixin.flexCenter;
+    height: 24px;
+    padding: 0 12px;
+    font-size: var(--font-micro);
+    border-radius: var(--size-border-radius);
+    background-color: var(--color-dark-white);
+    color: var(--color-white);
+    cursor: default;
+  }
 }

@@ -1,7 +1,10 @@
 'use client';
 import { CsLoading } from '@/components/ui/loading/CsLoading';
-import React from 'react';
 
 export default function Loading() {
-  return CsLoading;
+  return (
+    <div>
+      <CsLoading childeren={'로딩중입니다...'}></CsLoading>
+    </div>
+  );
 }

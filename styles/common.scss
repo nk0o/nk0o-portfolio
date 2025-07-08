@@ -1,6 +1,75 @@
 // common.scss 전역 css
-@use './variables';
+@use './variables' as var;
 @use './mixins';
 @use './reset';
 @use './functions';
 @use './globals';
+
+:root {
+  @each $name, $color in var.$common-colors {
+    --color-#{"" + $name}: #{$color};
+  }
+
+  /* Font size */
+  --font-large: 48px;
+  --font-medium: 28px;
+  --font-regular: 20px;
+  --font-small: 16px;
+  --font-micro: 14px;
+
+  /* Font Weight */
+  --weight-bold: 700;
+  --weight-semi-bold: 600;
+  --weight-regular: 400;
+
+  /* Size */
+  --size-border-radius: 4px;
+  --size-box-border-radius: 16px;
+  --header-height: 80px;
+  --inner-width: 1920px;
+
+  // 텍스트
+  --color-text-default: var(--color-gray-300),
+  --color-text-light: var(--color-gray-200),
+
+  // 배경
+  --color-background: var(--color-white),
+  --color-background-alt: var(--color-pink),
+
+  // 선
+  --color-border: var(--color-gray-600),
+  --color-divider: var(--color-gray-400),
+
+}
+
+// Dark Mode Variables
+@media (prefers-color-scheme: dark) {
+  :root {
+    // 텍스트
+    --color-text-default: var(--color-gray-300);
+    --color-text-light: var(--color-gray-500);
+
+    // 배경
+    --color-background: var(--color-gray-600);
+    --color-background-alt: var(--color-dark-navy);
+
+    // 선
+    --color-border: var(--color-dark-grey);
+    --color-divider: var(--color-gray-600);
+  }
+}
+
+
+.dark {
+  // 텍스트
+  --color-text-default: var(--color-gray-300);
+  --color-text-light: var(--color-gray-500);
+
+  // 배경
+  --color-background: var(--color-gray-600);
+  --color-background-alt: var(--color-dark-navy);
+
+  // 선
+  --color-border: var(--color-dark-grey);
+  --color-divider: var(--color-gray-600);
+}

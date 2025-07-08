@@ -1,9 +1,5 @@
+// Colors
 $common-colors: (
-  black-0: #000000,
-  black-3: #1f1f1f,
-  black-1: #dbdbdb,
-  black-2: #666666,
-
   // 브랜드 & 테마 색상
   primary: #0f62fe,
   secondary: #ff5151,
@@ -37,81 +33,18 @@ $common-colors: (
   gray-600: #6c757d,
   gray-700: #495057,
   gray-800: #343a40,
-  gray-900: #212529,
-
-
-  ) !default;
+  gray-900: #212529
+);
 
 // animation, transition
 $duration: 200ms !default;
 $easing: ease-in-out !default;
 
-:root {
-  @each $name, $color in $common-colors {
-    --color-#{"" + $name}: #{$color};
-  }
-
-  /* Font size */
-  --font-large: 48px;
-  --font-medium: 28px;
-  --font-regular: 20px;
-  --font-small: 16px;
-  --font-micro: 14px;
-
-  /* Font Weight */
-  --weight-bold: 700;
-  --weight-semi-bold: 600;
-  --weight-regular: 400;
-
-  /* Size */
-  --size-border-radius: 4px;
-  --size-box-border-radius: 16px;
-  --header-height: 80px;
-  --inner-width: 1920px;
-
-  /* Animation */
-  --animation-duration: 300ms;
-
-  // 텍스트
-  --color-text-default: $color-gray-300,
-  --color-text-light: $color-gray-200,
-
-  // 배경
-  --color-background: $color-white,
-  --color-background-alt: $color-pink,
-
-  // 선
-  --color-border: $color-gray-600,
-  --color-divider: $color-gray-400,
-
-  @media (prefers-color-scheme: dark) {
-    :root {
-      // 텍스트
-      // 텍스트
-      --color-text-default: $color-gray-300;
-      --color-text-light: $color-gray-500;
-
-      // 배경
-      --color-background: $color-black-3;
-      --color-background-alt: $color-dark-navy;
-
-      // 선
-      --color-border: $color-dark-grey;
-      --color-divider: $color-gray-600;
-    }
-  }
-}
-
-.dark {
-  // 텍스트
-  --color-text-default: $color-gray-300;
-  --color-text-light: $color-gray-500;
-
-  // 배경
-  --color-background: $color-black-3;
-  --color-background-alt: $color-dark-navy;
-
-  // 선
-  --color-border: $color-dark-grey;
-  --color-divider: $color-gray-600;
-}
+// Breakpoint
+$gap: 1px !default;
+$mobile: 375px + $gap !default;
+$tablet: 768px + $gap !default;
+$desktop: 1024px + $gap !default;
+$laptop: 1366px + $gap !default;
+$fullhd: 1920px + $gap !default;
+$qhd: 2560px + $gap !default;
