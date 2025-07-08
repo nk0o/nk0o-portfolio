@@ -4,6 +4,8 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import styles from "./header.module.scss";
 import cs from "classnames/bind";
+import LoginButton from '@/components/auth/LoginButton';
+import UserInfo from '@/components/auth/UserInfo';
 const cx = cs.bind(styles);
 
 export interface navProps {
@@ -19,6 +21,7 @@ export const Header = (props: HeaderProps) => {
   const nav: Array<navProps> = [
     { title: 'Home', link: '/' },
     { title: 'Projects', link: '/projects' },
+    { title: 'Anywords', link: '/anywords' },
     { title: 'Contact', link: '/contactme' },
   ];
   const [scrolled, setScrolled] = useState(false);
@@ -58,6 +61,11 @@ export const Header = (props: HeaderProps) => {
             ))}
           </ul>
         </nav>
+        <div className={cx("header__login")}>
+          <LoginButton />
+          <UserInfo />
+        </div>
+        
       </div>
     </header>
   );
