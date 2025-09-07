@@ -1,0 +1,27 @@
+app
+ ┣ contactme
+ ┃ ┣ page.module.scss
+ ┃ ┗ page.tsx
+ ┣ projects
+ ┃ ┣ page.module.scss
+ ┃ ┣ page.tsx
+ ┃ ┗ projectType.tsx
+ ┣ favicon.ico
+ ┣ layout.tsx
+ ┣ loading.tsx
+ ┣ main.module.scss
+ ┗ page.tsx
+components
+ ┗ ;
+public
+┗ ;
+styles
+ ┣ globals.scss
+ ┣ reset.scss
+ ┣ _functions.scss
+ ┗ _mixins.scss
+styles
+ ┣ globals.scss
+ ┣ reset.scss
+ ┣ _functions.scss
+ ┗ _mixins.scss

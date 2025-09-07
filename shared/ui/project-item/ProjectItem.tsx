@@ -15,11 +15,14 @@ interface ProjectItemProps {
   data: ProjectProps;
 }
 
-const renderDescriptionToHTML = (description: DescriptionRichTextProperty[]) => {
+const renderDescriptionToHTML = (
+  description: DescriptionRichTextProperty[],
+) => {
   return description
     .map((richText: DescriptionRichTextProperty) => {
       const { content } = richText.text;
-      const { bold, italic, strikethrough, underline, code, color } = richText.annotations;
+      const { bold, italic, strikethrough, underline, code, color } =
+        richText.annotations;
 
       let styledContent = content;
 
@@ -45,7 +48,14 @@ export const ProjectItem = (props: ProjectItemProps) => {
   const uRL = data.properties.URL.url;
   const skillLanguage = data.properties.SkillLanguage.multi_select;
   const description = data.properties.Description.rich_text;
-  const coverImage = (data.cover !== null) ? (data.cover.external?.url != null ? data.cover.external.url : (data.cover.file?.url != null ? data.cover.file.url : null)) : null;
+  const coverImage =
+    data.cover !== null
+      ? data.cover.external?.url != null
+        ? data.cover.external.url
+        : data.cover.file?.url != null
+        ? data.cover.file.url
+        : null
+      : null;
   const [htmlContent, setHtmlContent] = useState('');
 
   useEffect(() => {
@@ -62,30 +72,35 @@ export const ProjectItem = (props: ProjectItemProps) => {
     <div className={cx('project-box')}>
       {coverImage && (
         <figure className={cx('project-box__img')}>
-          <Image src={coverImage} fill alt="프로젝트 이미지" loading="lazy"/>
+          <Image src={coverImage} fill alt="프로젝트 이미지" loading="lazy" />
         </figure>
       )}
       <div className={cx('project-box__inner')}>
-        <h3 className={cx('project-box__title')}>
-          {projectTitle}
-          {uRL && (
-            <Link href={uRL} target="_blank" className={cx('project-box__link')}>
-              <Image src={LinkIcon} width={24} height={24} alt="링크 열기" />
-            </Link>
-          )}
-        </h3>
-        <div className={cx("project-box__desc")} dangerouslySetInnerHTML={{ __html: htmlContent }}/>
+        {uRL && (
+          <Link href={uRL} target="_blank" className={cx('project-box__link')}>
+            <h3 className={cx('project-box__title')}>{projectTitle}</h3>
+            <Image src={LinkIcon} width={24} height={24} alt="링크 열기" />
+          </Link>
+        )}
+        <div
+          className={cx('project-box__desc')}
+          dangerouslySetInnerHTML={{ __html: htmlContent }}
+        />
         <div className={cx('project-box__date')}>
           작업기간: {workPeriodStart} ~ {workPeriodEnd}
         </div>
         {skillLanguage.length !== 0 && (
-          <ul className={cx('skill-list')}>
-            {skillLanguage.map((skill: SkillSelectProperty, index: number) => (
-              <li key={index} className={cx('skill-list__item')}>
-                {skill.name}
-              </li>
-            ))}
-          </ul>
+          <div className={cx('skill-list__wrapper')}>
+            <ul className={cx('skill-list')}>
+              {skillLanguage.map(
+                (skill: SkillSelectProperty, index: number) => (
+                  <li key={index} className={cx('skill-list__item')}>
+                    {skill.name}
+                  </li>
+                ),
+              )}
+            </ul>
+          </div>
         )}
       </div>
     </div>
