@@ -1,7 +1,7 @@
 .intro-hero {
   display: flex;
 
-  &>* {
+  & > * {
     flex: 1;
   }
 
@@ -16,14 +16,20 @@
 
 .intro-msg {
   margin-bottom: 40px;
-  color: var(--color-white);
-  font-size: var(--font-large);
+  color: var(--color-dark-navy);
+  font-size: var(--font-medium);
   font-weight: var(--weight-bold);
   line-height: 1.5;
   letter-spacing: 3px;
-
-  @media screen and (max-width:768px) {
-    display: none;
+  word-break: keep-all;
+  &-br {
+    display: block;
+  }
+  @media screen and (max-width: 768px) {
+    text-align: center;
+    &-br {
+      display: inline-block;
+    }
   }
 }
 

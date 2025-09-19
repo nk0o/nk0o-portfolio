@@ -8,7 +8,12 @@ export default function Home() {
   return (
     <main className={cx('main-page')}>
       <div className="wrapper__inner">
-        <p className={cx('intro-msg')}>&quot;Better than Yesterday&quot;</p>
+        {/* <p className={cx('intro-msg')}>&quot;Better than Yesterday&quot;</p> */}
+        <p className={cx('intro-msg')}>
+          &quot;퍼블리싱 전문성과 프론트엔드&nbsp;개발 경험으로&nbsp;
+          <span className={cx('intro-msg-br')}></span>
+          안정적이고 사용자 친화적인 웹을 구현합니다.&quot;
+        </p>
 
         <div className={cx('intro-hero')}>
           <ul className={cx('about-msg')}>
