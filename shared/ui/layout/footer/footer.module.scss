@@ -30,23 +30,33 @@
   }
 
   &__links {
-    width: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
     height: 28px;
     margin: 0 auto 24px;
-    transition: all var(--animation-duration) ease-in;
-    color: var(--color-black-3);
 
     a {
       display: block;
+      height: 100%;
+      color: var(--color-black-3);
+      transition: all var(--animation-duration) ease-in;
 
       svg {
         height: 100%;
       }
-    }
-
-    &:hover {
-      transform: scale(1.1);
-      color: var(--color-black-1);
+      &:hover {
+        transform: scale(1.1);
+        &.link {
+          &--github {
+            color: #9055c5;
+          }
+          &--instagram {
+            color: #e4405f;
+          }
+        }
+      }
     }
   }
 
