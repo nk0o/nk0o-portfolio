@@ -5,10 +5,11 @@ import styles from './footer.module.scss';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faGit,
+  faMailchimp,
   faGithub,
   faInstagram,
 } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 const cx = cs.bind(styles);
 
 interface FooterProps {
@@ -26,7 +27,16 @@ export const Footer = (props: FooterProps) => {
       >
         <div className={cx('wrapper__inner')}>
           <div className={cx('footer__contact')}>
+            <div className={cx('footer__title')}>Let&apos;s talk!</div>
             <div className={cx('footer__links')}>
+              <Link
+                className={cx('link--mail')}
+                href="mailto:skrud041@gmail.com"
+                target="_blank"
+                title="메일 보내기"
+              >
+                <FontAwesomeIcon size={'xs'} icon={faEnvelope} />
+              </Link>
               <Link
                 className={cx('link--github')}
                 href="https://github.com/nk0o"
@@ -44,13 +54,6 @@ export const Footer = (props: FooterProps) => {
                 <FontAwesomeIcon size={'xs'} icon={faInstagram} />
               </Link>
             </div>
-            <div className={cx('footer__title')}>Let&apos;s talk!</div>
-            <Link
-              href="mailto:skrud041@gmail.com"
-              className={cx('footer__description')}
-            >
-              skrud041@gmail.com
-            </Link>
           </div>
           <div className={cx('footer__copyright')}>
             2025 이나경&apos;s Portfolio - All rights reserved

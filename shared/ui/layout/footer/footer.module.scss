@@ -16,6 +16,10 @@
     margin: 0 0 16px;
     font-size: var(--font-medium);
     font-weight: var(--weight-bold);
+    @media screen and (max-width: 768px) {
+      margin: 0 0 10px;
+      font-size: 20px;
+    }
   }
 
   &__title,
@@ -34,12 +38,12 @@
     justify-content: center;
     align-items: center;
     gap: 12px;
-    height: 28px;
     margin: 0 auto 24px;
 
     a {
       display: block;
-      height: 100%;
+      width: 28px;
+      height: 28px;
       color: var(--color-black-3);
       transition: all var(--animation-duration) ease-in;
 
@@ -48,14 +52,11 @@
       }
       &:hover {
         transform: scale(1.1);
-        &.link {
-          &--github {
-            color: #9055c5;
-          }
-          &--instagram {
-            color: #e4405f;
-          }
-        }
+        color: #9055c5;
+      }
+      @media screen and (max-width: 768px) {
+        width: 20px;
+        height: 20px;
       }
     }
   }
@@ -66,6 +67,11 @@
     bottom: 40px;
     left: 50%;
     transform: translateX(-50%);
+    width: 100%;
+    @media screen and (max-width: 768px) {
+      bottom: 20px;
+      font-size: var(--font-micro);
+    }
   }
 }
 
