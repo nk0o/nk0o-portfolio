@@ -1,15 +1,15 @@
 @use './reset.scss';
-@import "tailwindcss";
+@import 'tailwindcss';
 /* Global */
 $common-colors: (
   white: #ffffff,
   black-0: #000000,
-  black-1: #DBDBDB,
+  black-1: #dbdbdb,
   black-2: #666666,
-  black-3: #1F1F1F,
-  primary: #0F62FE,
-  dark-navy:#2e3d49,
-  secondary: #FF5151,
+  black-3: #1f1f1f,
+  primary: #0f62fe,
+  dark-navy: #2e3d49,
+  secondary: #ff5151,
   light-white: #eeeeee,
   dark-white: #bdbdbd,
   pink: #fe918d,
@@ -42,14 +42,14 @@ $common-colors: (
   /* Size */
   --size-border-radius: 4px;
   --size-box-border-radius: 16px;
-  --header-height:80px;
-  --inner-width:1920px;
+  --header-height: 80px;
+  --inner-width: 1920px;
 
   /* Animation */
-  --animation-duration:300ms;
+  --animation-duration: 300ms;
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width: 768px) {
   :root {
     --header-height: 120px;
   }
@@ -70,6 +70,7 @@ body {
 
 body {
   color: var(--color-black-3);
+  background-color: var(--color-white);
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -92,7 +93,6 @@ a {
   }
 }
 
-
 /* Typography */
 h1 {
   font-size: var(--font-large);
@@ -100,7 +100,7 @@ h1 {
   color: var(--color-black);
   margin: 16px 0;
 
-  @media screen and (max-width:768px) {
+  @media screen and (max-width: 768px) {
     margin: 8px 0;
   }
 }
@@ -133,7 +133,7 @@ p {
   margin: 0 auto;
   padding: 64px 40px;
 
-  @media screen and (max-width:768px) {
+  @media screen and (max-width: 768px) {
     padding: 40px 20px;
   }
 }
