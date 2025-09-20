@@ -42,6 +42,7 @@ const renderDescriptionToHTML = (
 
 export const ProjectItem = (props: ProjectItemProps) => {
   const { data } = props;
+  console.log(data);
   const projectTitle = data.properties.ProjectName.title[0].plain_text;
   const workPeriodStart = data.properties.WorkPeriod.date.start;
   const workPeriodEnd = data.properties.WorkPeriod.date.end;
@@ -76,11 +77,13 @@ export const ProjectItem = (props: ProjectItemProps) => {
         </figure>
       )}
       <div className={cx('project-box__inner')}>
-        {uRL && (
+        {uRL ? (
           <Link href={uRL} target="_blank" className={cx('project-box__link')}>
             <h3 className={cx('project-box__title')}>{projectTitle}</h3>
             <Image src={LinkIcon} width={24} height={24} alt="링크 열기" />
           </Link>
+        ) : (
+          <h3 className={cx('project-box__title')}>{projectTitle}</h3>
         )}
         <div
           className={cx('project-box__desc')}
